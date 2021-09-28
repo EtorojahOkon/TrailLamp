@@ -27,7 +27,10 @@ Clone this directory and rename and place in your project directory
 
 ## Usage
 First set environment variables in .env file.
-Then run launch app on the TrailLamp console or point to the appropriate url on your browser
+Then  point to the appropriate url on your browser or on your cmd or terminal, run the following command
+```php
+  php index.php
+```
 
 TrailLamp needs a virtual host to run. For local development, Laragon can be used to develop applications with TrailLamp
 
@@ -39,7 +42,7 @@ A simple route can be written as follows.
 ```
 Here the request method is specified (TrailLamp currently supports only GET and POST requests)
 
-The first parameter is the relative routh path or url
+The first parameter is the relative route path or url
 
 The second parameter is the Controller name and the controller method separated by an @ sign
 Routes can also be called with functions. Eg
@@ -50,7 +53,7 @@ Routes can also be called with functions. Eg
   });
 ```
 
-All request values(like form values whose action was set to a specified value) can be gotten via your controller $request std class as follows
+All request values(like form values whose action was set to a specified route) can be gotten via your controller $request std class as follows
 
 ```php
   $name = $this->request->name 
@@ -64,6 +67,7 @@ Routes with parameters are called with the parameter names in  curly brackets ex
   $routes->get("/about/{name}", "Controller@Main");
 ```
 Thus visiting url/about/Etorojah will call the Main method in the Controller class.
+
 Multiple parameters are supported. To get the values of the parameters in the controller method, simply use
 
 ```php
@@ -93,7 +97,7 @@ Model names should start with a capital letter and the filename must be the same
 By default, four model methods are created(create, read, update and delete). These methods can be deleted if not needed and your own defined methods called.
 
 ### Performing queries with a model
-Call the query method from your model function eg getprod() with the query string as a parameter
+Call the query method from your model method eg getprod() with the query string as a parameter
 ```php
   $q = $this->query("SELECT * FROM products" );
  ```
@@ -104,7 +108,7 @@ Call the query method from your model function eg getprod() with the query strin
       return result;
   }
  ```
-Remember to always validate and sanitize your inputs
+Remember to always validate and sanitize your inputs before making queries
 
 
 
