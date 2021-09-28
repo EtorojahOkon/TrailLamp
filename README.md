@@ -110,6 +110,142 @@ Call the query method from your model method eg getprod() with the query string 
  ```
 Remember to always validate and sanitize your inputs before making queries
 
+In your controller class method, reference the model using the include() method
+```php
+  include("path/Model.php");
+```
+create a new instance of the model
+```php
+  $prod = new ProductModel();
+```
+And call the model method to get the results
+```php
+  $prod->getprod();
+```
+
+### Deleting a model
+Simply run the following command on your TrailLamp console
+```
+  delete model ModelName
+```
+### Controllers
+Controller perform majority of the app functions.
+
+To create a controller, run the following command on the TrailLamp console
+```
+  create controller ControllerName
+ ```
+ Controller file name and class name must be the same.
+All controllers inherit the default TrailLamp controller class
+
+Views can be called via the controller using
+```php
+  $this->view(string file name)
+ ```
+ Do not include the file extension
+
+## Views
+All files in the view folder are views.
+
+To create a view simply run the following on the TrailLamp console
+```
+  create view ViewName
+ ```
+ Models can be called within views for example when displaying data from database 
+ 
+ First reference the model file
+ 
+ Create an instance of the class
+ 
+And call the class method from the view
+
+Just three lines suffice in views
+```php
+     include("Model.php");
+     $prod = new Model();
+     $prod->get-products();
+```
+In your model method the query and result can be echoed 
+```php
+  $q = $this->query("SELECT * FROM products" );
+  while($r= mysqli_fetch_array($q)){
+    echo '<h1>'.$r["name"].'</h1> ';
+  }
+```
+##Console
+The console helps your easily run TrailLamp commands
+###Console commands
+Create model
+```
+  create model Modelname
+```
+Create controller
+```
+create controller ControllerName
+```
+Create view
+```
+create view ViewName
+```
+View error log
+```
+view error log
+```
+Clear error log
+```
+clear error log
+```
+Delete model
+```
+delete model ModelName
+```
+Delete view
+```
+delete view ViewName
+```
+Delete controller
+```
+delete controller ControllerName
+```
+##Migrations
+To perform migrations simply rename your migration file to migrations.sql and then place in the migrations directory
+
+Then point to https://url-path/migrations/migrations.php on your browser example
+```
+https://traillamp.test/migrations/migrations.php
+```
+
+##Encryptions
+To encrypt a text or url, first include the utility/Encryption.php file
+
+Create a new instance of the class Encryption()
+
+And call the appropriate method encrypt() or decrypt() with the string/hash as parameter
+
+```php
+include("utility/Encryption.php");
+$enc = new Encryption();
+$enc->encrypt("Hi"); or 
+$enc->decrypt("hdhwkugehh48u38y38r88div3");
+```
+
+##Errors
+Any error while developing is shown on the screen. The error is also logged into the error_log file for reference purposes
+The error log file can be cleared with the clear error log command
+
+##Contributions
+Any issues found, please create an issue.
+
+To contribute to this project, send an email to etorojahokon100@gmail.com or call +234 803 264 5840
+
+
+
+
+
+
+  
+
+
 
 
 
