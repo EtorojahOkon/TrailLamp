@@ -172,9 +172,9 @@ In your model method the query and result can be echoed
     echo '<h1>'.$r["name"].'</h1> ';
   }
 ```
-##Console
+## Console
 The console helps your easily run TrailLamp commands
-###Console commands
+### Console commands
 Create model
 ```
   create model Modelname
@@ -207,7 +207,7 @@ Delete controller
 ```
 delete controller ControllerName
 ```
-##Migrations
+## Migrations
 To perform migrations simply rename your migration file to migrations.sql and then place in the migrations directory
 
 Then point to https://url-path/migrations/migrations.php on your browser example
@@ -215,7 +215,7 @@ Then point to https://url-path/migrations/migrations.php on your browser example
 https://traillamp.test/migrations/migrations.php
 ```
 
-##Encryptions
+## Encryptions
 To encrypt a text or url, first include the utility/Encryption.php file
 
 Create a new instance of the class Encryption()
@@ -229,11 +229,11 @@ $enc->encrypt("Hi"); or
 $enc->decrypt("hdhwkugehh48u38y38r88div3");
 ```
 
-##Errors
+## Errors
 Any error while developing is shown on the screen. The error is also logged into the error_log file for reference purposes
 The error log file can be cleared with the clear error log command
 
-##Contributions
+## Contributions
 Any issues found, please create an issue.
 
 To contribute to this project, send an email to etorojahokon100@gmail.com or call +234 803 264 5840
