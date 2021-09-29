@@ -28,7 +28,9 @@ class Router {
             }
             else {
                 for ($i=0; $i < count($route_arr); $i++) { 
-                    $op[$route_arr[$i]] = $uri_arr[$i];
+                    if ($route_arr[$i] !== $uri_arr[$i]) {
+                        $op[$route_arr[$i]] = $uri_arr[$i];
+                    }
                 } 
                 $final_router->final_routing($callback, $method, $op);
             }
