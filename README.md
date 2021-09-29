@@ -38,7 +38,7 @@ TrailLamp needs a virtual host to run. For local development, Laragon can be use
 All routes are set in the routes.php file.
 A simple route can be written as follows.
 ```php
-  $routes->get("/", "Controller@Main");
+  $router->get("/", "Controller@Main");
 ```
 Here the request method is specified (TrailLamp currently supports only GET and POST requests)
 
@@ -48,7 +48,7 @@ The second parameter is the Controller name and the controller method separated 
 Routes can also be called with functions. Eg
 
 ```php
-  $routes->get("/", function(){
+  $router->get("/", function(){
        echo "ok";
   });
 ```
@@ -64,7 +64,7 @@ Remember to use the appropriate request method in your routes file
 Routes with parameters are called with the parameter names in  curly brackets example
 
 ```php
-  $routes->get("/about/{name}", "Controller@Main");
+  $router->get("/about/{name}", "Controller@Main");
 ```
 Thus visiting url/about/Etorojah will call the Main method in the Controller class.
 
@@ -138,11 +138,17 @@ To create a controller, run the following command on the TrailLamp console
  Controller file name and class name must be the same.
 All controllers inherit the default TrailLamp controller class
 
-Views can be called via the controller using
+Views can be called via the controller using $this->view(string file name);
 ```php
-  $this->view(string file name)
+  $this->view('welcome');
  ```
  Do not include the file extension
+ 
+ Redirects can also be performed via controller using $this->redirect(relative_url)
+ ```php
+  $this->redirect('/about');
+  ```
+ Remember to reference this route in your routes.php file
 
 ## Views
 All files in the view folder are views.
