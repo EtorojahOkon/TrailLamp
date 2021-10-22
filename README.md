@@ -58,6 +58,11 @@ All request values(like form values whose action was set to a specified route) c
 ```php
   $name = $this->request->name 
 ```
+
+All uploaded files can be accessed via controller using
+```php
+  $file = $this->files
+```
 Remember to use the appropriate request method in your routes file
 
 ## Parameterized routes
@@ -220,6 +225,14 @@ Then point to https://url-path/migrations/migrations.php on your browser example
 ```
 https://traillamp.test/migrations/migrations.php
 ```
+
+## Requests
+All Ajax and fetch requests are to be routed to requests.php file in the TrailLamp request folder
+In your request, simply call the controller name and method separated by an @ using 
+```php
+$req->attachController($callback, $method) 
+```
+where callback is the controller name and method separated by an @ and the method is the request type
 
 ## Encryptions
 To encrypt a text or url, first include the utility/Encryption.php file
