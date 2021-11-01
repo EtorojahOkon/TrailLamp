@@ -82,9 +82,17 @@ Multiple parameters are supported. To get the values of the parameters in the co
 
 eg 
 ```php
-  $this->params["name"]
+  echo $this->params["name"];
 ```
 will return Etorojah and can be used to perform any necessary action.
+
+Parameter values can also be accessed in views
+
+```php
+<?php
+  echo $this->params["name"];
+ ?>
+ ```
 
 Parameters cannot be passed to a function. Always use controllers
 
