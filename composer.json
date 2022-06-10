@@ -1,0 +1,15 @@
+{
+    "name": "etorojah/traillamp",
+    "description": "A lightweight MVC Framework for Php",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Etorojah Okon",
+            "email": "etorojahokon100@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}
