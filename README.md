@@ -3,6 +3,10 @@
 ## Introduction
 TrailLamp is a lightweight, easy-to-use Php MVC framework that can be used to build web applications and REST APIs.
 
+## ALert
+Traillamp v1.1.0 is out :star_struck:
+[Check out the release](https://github.com/EtorojahOkon/TrailLamp/releases/tag/v1.1.0)
+
 ## Installation
 Clone this directory and rename and place in your project directory
 
